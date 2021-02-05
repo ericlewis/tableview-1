@@ -12,6 +12,7 @@ import React
 class TableView: RCTViewManager {
   override func view() -> UIView! {
     let viewController = TableViewController()
+    viewController.tableView.reloadData()
     return viewController.view
   }
   
