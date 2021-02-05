@@ -9,6 +9,7 @@ import Foundation
 import UIKit
 
 class TableViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+  let tableView: UITableView!
   let data: [Int] = [0, 1, 2, 3, 4, 5]
   
   func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -21,10 +22,13 @@ class TableViewController: UIViewController, UITableViewDataSource, UITableViewD
     return cell
   }
   
+  init() {
+      tableView = UITableView()
+  }
+  
   override func viewDidLoad() {
     super.viewDidLoad()
     
-    let tableView = UITableView()
     view.addSubview(tableView)
     tableView.translatesAutoresizingMaskIntoConstraints = false
     tableView.topAnchor.constraint(equalTo:view.topAnchor).isActive = true
