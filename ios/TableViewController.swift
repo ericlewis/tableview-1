@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-class TableViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class TableViewController: UITableViewController {
   let tableView: UITableView!
   let data: [Int] = [0, 1, 2, 3, 4, 5]
   
@@ -21,23 +21,4 @@ class TableViewController: UIViewController, UITableViewDataSource, UITableViewD
     cell.textLabel?.text = "Yeet"
     return cell
   }
-  
-  init() {
-      tableView = UITableView()
-  }
-  
-  override func viewDidLoad() {
-    super.viewDidLoad()
-    
-    view.addSubview(tableView)
-    tableView.translatesAutoresizingMaskIntoConstraints = false
-    tableView.topAnchor.constraint(equalTo:view.topAnchor).isActive = true
-    tableView.leftAnchor.constraint(equalTo:view.leftAnchor).isActive = true
-    tableView.rightAnchor.constraint(equalTo:view.rightAnchor).isActive = true
-    tableView.bottomAnchor.constraint(equalTo:view.bottomAnchor).isActive = true
-    
-    tableView.delegate = self
-    tableView.dataSource = self
-  }
 }
-
